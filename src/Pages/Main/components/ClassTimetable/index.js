@@ -2,8 +2,8 @@ const ClassTimetable = () => {
   return (
     <div className="container-fluid p-5">
       <div className="mb-5 text-center">
-        <h5 className="text-primary text-uppercase">Class Schedule</h5>
-        <h1 className="display-3 text-uppercase mb-0">Working Hours</h1>
+        {/* <h5 className="text-primary text-uppercase">Class Schedule</h5> */}
+        <h1 className="display-3 text-uppercase mb-0">合作品牌</h1>
       </div>
       <div className="tab-class text-center">
         <ul className="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5">
@@ -13,7 +13,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-1"
             >
-              Monday
+              芯片
             </a>
           </li>
           <li className="nav-item">
@@ -22,7 +22,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-2"
             >
-              Tuesday
+              IGBT
             </a>
           </li>
           <li className="nav-item">
@@ -31,7 +31,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-3"
             >
-              Wednesday
+              光耦
             </a>
           </li>
           <li className="nav-item">
@@ -40,7 +40,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-4"
             >
-              Thursday
+              电容
             </a>
           </li>
           <li className="nav-item">
@@ -49,7 +49,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-5"
             >
-              Friday
+              电阻
             </a>
           </li>
           <li className="nav-item">
@@ -58,7 +58,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-6"
             >
-              Saturday
+              二三极管
             </a>
           </li>
           <li className="nav-item">
@@ -67,7 +67,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-7"
             >
-              Sunday
+              连接器
             </a>
           </li>
         </ul>
