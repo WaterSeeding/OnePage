@@ -14,7 +14,7 @@ const Header = () => {
         <div className="col-lg-3 bg-dark d-none d-lg-block">
           <a className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
             <img
-              class="img-thumbnail"
+              className="img-thumbnail"
               style={{ width: 160, height: "auto" }}
               src="/static/img/main/logo.jpg"
               alt=""
@@ -25,7 +25,7 @@ const Header = () => {
           <div className="row gx-0 bg-secondary d-none d-lg-flex">
             <div className="col-lg-7 px-5 text-start">
               <div className="h-100 d-inline-flex align-items-center py-2 me-4">
-                <i class="bi bi-geo-alt text-primary me-2"></i>
+                <i className="bi bi-geo-alt text-primary me-2"></i>
                 <h6 className="mb-0 font-weight-bold">深圳市佳创伟业科技有限公司</h6>
               </div>
             </div>
@@ -33,7 +33,7 @@ const Header = () => {
               <div className="d-inline-flex align-items-center py-2">
                 <a className="btn btn-light btn-square rounded-circle me-2">
                   <img
-                    class="img-thumbnail"
+                    className="img-thumbnail"
                     style={{ width: 24, height: "auto" }}
                     src="/static/img/main/chinese.gif"
                     alt=""
@@ -41,7 +41,7 @@ const Header = () => {
                 </a>
                 <a className="btn btn-light btn-square rounded-circle me-2">
                   <img
-                    class="img-thumbnail"
+                    className="img-thumbnail"
                     style={{ width: 24, height: "auto" }}
                     src="/static/img/main/english.gif"
                     alt=""

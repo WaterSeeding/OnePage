@@ -2,20 +2,19 @@ import "./Main.css";
 import Carousel from "./components/Carousel";
 import About from "./components/About";
 import ClassTimetable from "./components/ClassTimetable";
-import Facts from "./components/Facts";
 import Team from "./components/Team";
 import Testimonial from "./components/Testimonial";
-import Blog from "./components/Blog";
+import Blog from "../../Pages/Blog/Blog";
 
 const Main = () => {
   return (
     <>
       <Carousel />
-      <About />
       <ClassTimetable />
+      <About />
+      <Blog />
       <Team />
       <Testimonial />
-      <Blog />
     </>
   );
 };
