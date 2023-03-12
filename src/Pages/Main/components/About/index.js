@@ -22,132 +22,73 @@ const About = () => {
             <div className="tab-content">
               <form className="row g-3">
                 <div className="col-md-6">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     *型号
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-md-6">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     *品牌
                   </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-md-6">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     数量
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-md-6">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     目标价格
                   </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-12">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     备注
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="1234 Main St"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-md-6">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     姓名
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-md-6">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     公司
                   </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-md-3">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     邮箱
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-md-3">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     电话
                   </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
                 <div className="col-6">
-                  <label
-                    className="form-label"
-                    style={{ color: "#FB5B21" }}
-                  >
+                  <label className="form-label" style={{ color: "#FB5B21" }}>
                     留言信息
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                  />
+                  <input className="form-control" />
                 </div>
-                <div className="col-12" style={{display: 'flex', justifyContent: 'flex-end'}}>
-                    <button type="submit" className="btn btn-outline-primary">
-                      询价
-                    </button>
-                  </div>
-
+                <div
+                  className="col-12"
+                  style={{ display: "flex", justifyContent: "flex-end" }}
+                >
+                  <button type="submit" className="btn btn-outline-primary">
+                    询价
+                  </button>
+                </div>
               </form>
             </div>
           </div>

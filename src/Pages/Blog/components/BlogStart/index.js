@@ -1,4 +1,5 @@
 const BlogStart = () => {
+  const dataList = Array.from({ length: 10 });
   return (
     <div className="container-fluid p-5">
       <div className="row g-5">
@@ -143,175 +144,50 @@ const BlogStart = () => {
           </div>
         </div>
         <div className="col-lg-8">
-          <div className="row g-5">
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
+          <div className="row g-5 pt-4">
+            {dataList.map((value, index) => (
+              <div key={index} className="job-item p-4 mt-0 mb-0">
+                <div className="row g-4">
+                  <div className="col-sm-12 col-md-8 d-flex align-items-center">
+                    <img
+                      className="flex-shrink-0 img-fluid border rounded"
+                      src="/static/img/img/com-logo-1.jpg"
+                      alt=""
+                      style={{ width: 80, height: 80 }}
+                    />
+                    <div className="text-start ps-4">
+                      <h5 className="mb-3">Software Engineer</h5>
+                      <span className="text-truncate me-3">
+                        <i className="fa fa-map-marker-alt text-primary me-2"></i>
+                        New York, USA
+                      </span>
+                      <span className="text-truncate me-3">
+                        <i className="far fa-clock text-primary me-2"></i>Full
+                        Time
+                      </span>
+                      <span className="text-truncate me-0">
+                        <i className="far fa-money-bill-alt text-primary me-2"></i>
+                        $123 - $456
+                      </span>
+                    </div>
                   </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
+                  <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                    <div className="d-flex mb-3">
+                      <a className="btn btn-light btn-square me-3" href="">
+                        <i className="far fa-heart text-primary"></i>
+                      </a>
+                      <a className="btn btn-primary" href="">
+                        Apply Now
+                      </a>
+                    </div>
+                    <small className="text-truncate">
+                      <i className="far fa-calendar-alt text-primary me-2"></i>
+                      Date Line: 01 Jan, 2045
+                    </small>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
-                  </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-3.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
-                  </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
-                  </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
-                  </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-3.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
-                  </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
-                  </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="blog-item">
-                <div className="position-relative overflow-hidden rounded-top">
-                  <img
-                    className="img-fluid"
-                    src="/static/img/blog-2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
-                  <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                    <span>01</span>
-                    <h6 className="text-light text-uppercase mb-0">January</h6>
-                    <span>2045</span>
-                  </div>
-                  <a className="h5 text-uppercase text-light" href="">
-                    Sed amet tempor amet sit kasd sea lorem
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
             <div className="col-12">
               <nav aria-label="Page navigation">
                 <ul className="pagination pagination-lg justify-content-start m-0">

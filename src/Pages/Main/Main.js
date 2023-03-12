@@ -13,7 +13,6 @@ const Main = () => {
       <ClassTimetable />
       <About />
       <Blog />
-      <Team />
       <Testimonial />
     </>
   );

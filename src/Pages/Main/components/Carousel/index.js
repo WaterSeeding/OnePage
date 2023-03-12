@@ -10,42 +10,40 @@ const Carousel = () => {
           <div className="carousel-item active">
             <img
               className="w-100"
-              src="/static/img/carousel-1.jpg"
+              src="/static/img/carousel-2.jpg"
               alt="Image"
             />
-            <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <div
+              className="carousel-caption d-flex flex-column align-items-center justify-content-center"
+              style={{ background: "rgba(34, 36, 41, .7)" }}
+            >
               <div className="p-3" style={{ maxWidth: 900 }}>
-                <h5 className="text-white text-uppercase">Best Gym Center</h5>
-                <h1 className="display-2 text-white text-uppercase mb-md-4">
-                  Build Your Body Strong With Gymster
+                <h1 className="display-6 text-white text-uppercase mb-md-4">
+                  经营宗旨
                 </h1>
-                <a href="" className="btn btn-primary py-md-3 px-md-5 me-3">
-                  Join Us
-                </a>
-                <a href="" className="btn btn-light py-md-3 px-md-5">
-                  Contact Us
-                </a>
+                <h1 className="display-3 text-white text-uppercase mb-md-5">
+                  原装正品 保证质量 准时交货 价格及优
+                </h1>
               </div>
             </div>
           </div>
           <div className="carousel-item">
             <img
               className="w-100"
-              src="/static/img/carousel-2.jpg"
+              src="/static/img/carousel-3.jpg"
               alt="Image"
             />
-            <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <div
+              className="carousel-caption d-flex flex-column align-items-center justify-content-center"
+              style={{ background: "rgba(34, 36, 41, .7)" }}
+            >
               <div className="p-3" style={{ maxWidth: 900 }}>
-                <h5 className="text-white text-uppercase">Best Gym Center</h5>
-                <h1 className="display-2 text-white text-uppercase mb-md-4">
-                  Grow Your Strength With Our Trainers
+                <h1 className="display-6 text-white text-uppercase mb-md-4">
+                  公司宗旨
                 </h1>
-                <a href="" className="btn btn-primary py-md-3 px-md-5 me-3">
-                  Join Us
-                </a>
-                <a href="" className="btn btn-light py-md-3 px-md-5">
-                  Contact Us
-                </a>
+                <h1 className="display-3 text-white text-uppercase mb-md-5">
+                  诚信 专业 热情 积极
+                </h1>
               </div>
             </div>
           </div>

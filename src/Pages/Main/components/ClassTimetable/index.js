@@ -1,3 +1,74 @@
+const XinPianList = [
+  "/static/img/main/芯片/1.jpg",
+  "/static/img/main/芯片/2.jpg",
+  "/static/img/main/芯片/3.jpg",
+  "/static/img/main/芯片/4.jpg",
+  "/static/img/main/芯片/5.jpg",
+  "/static/img/main/芯片/6.jpg",
+  "/static/img/main/芯片/7.jpg",
+  "/static/img/main/芯片/8.jpg",
+];
+const IGBTList = [
+  "/static/img/main/IGBT/1.jpg",
+  "/static/img/main/IGBT/2.jpg",
+  "/static/img/main/IGBT/3.jpg",
+  "/static/img/main/IGBT/4.jpg",
+  "/static/img/main/IGBT/5.jpg",
+  "/static/img/main/IGBT/6.jpg",
+  "/static/img/main/IGBT/7.jpg",
+  "/static/img/main/IGBT/8.jpg",
+];
+const GuangOuList = [
+  "/static/img/main/光耦/1.jpg",
+  "/static/img/main/光耦/2.jpg",
+  "/static/img/main/光耦/3.jpg",
+  "/static/img/main/光耦/4.jpg",
+  "/static/img/main/光耦/5.jpg",
+  "/static/img/main/光耦/6.jpg",
+  "/static/img/main/光耦/7.jpg",
+  "/static/img/main/光耦/8.jpg",
+];
+const DianRongList = [
+  "/static/img/main/电容/1.jpg",
+  "/static/img/main/电容/2.jpg",
+  "/static/img/main/电容/3.jpg",
+  "/static/img/main/电容/4.jpg",
+  "/static/img/main/电容/5.jpg",
+  "/static/img/main/电容/6.jpg",
+  "/static/img/main/电容/7.jpg",
+  "/static/img/main/电容/8.jpg",
+];
+const DianZuList = [
+  "/static/img/main/电阻/1.jpg",
+  "/static/img/main/电阻/2.jpg",
+  "/static/img/main/电阻/3.jpg",
+  "/static/img/main/电阻/4.jpg",
+  "/static/img/main/电阻/5.jpg",
+  "/static/img/main/电阻/6.jpg",
+  "/static/img/main/电阻/7.jpg",
+  "/static/img/main/电阻/8.jpg",
+];
+const JiGuangList = [
+  "/static/img/main/二三极管/1.jpg",
+  "/static/img/main/二三极管/2.jpg",
+  "/static/img/main/二三极管/3.jpg",
+  "/static/img/main/二三极管/4.jpg",
+  "/static/img/main/二三极管/5.jpg",
+  "/static/img/main/二三极管/6.jpg",
+  "/static/img/main/二三极管/7.jpg",
+  "/static/img/main/二三极管/8.jpg",
+];
+const LianJieQiList = [
+  "/static/img/main/连接器/1.jpg",
+  "/static/img/main/连接器/2.jpg",
+  "/static/img/main/连接器/3.jpg",
+  "/static/img/main/连接器/4.jpg",
+  "/static/img/main/连接器/5.jpg",
+  "/static/img/main/连接器/6.jpg",
+  "/static/img/main/连接器/7.jpg",
+  "/static/img/main/连接器/8.jpg",
+];
+
 const ClassTimetable = () => {
   return (
     <div className="container-fluid p-5">
@@ -74,688 +145,79 @@ const ClassTimetable = () => {
         <div className="tab-content">
           <div id="tab-1" className="tab-pane fade show p-0 active">
             <div className="row g-5">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00am - 8.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Power Lifting</h5>
-                  <p className="text-uppercase text-secondary mb-0">John Deo</p>
+              {XinPianList.map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="rounded py-1 px-1">
+                    <img className="img-fluid" src={item} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00am - 10.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Body Building</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Taylor
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    10.00am - 12.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Cardio Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jack Sparrow
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    12.00pm - 2.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Weight Loose</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Robert Smith
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    2.00pm - 4.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Fitness Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Adam Phillips
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    4.00pm - 6.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Crossfit Class
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Alien
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00pm - 8.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Muscle Building
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Petter John
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00pm - 10.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Yoga Class</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jessy Reo
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div id="tab-2" className="tab-pane fade p-0">
             <div className="row g-5">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00am - 8.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Power Lifting</h5>
-                  <p className="text-uppercase text-secondary mb-0">John Deo</p>
+              {IGBTList.map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="rounded py-1 px-1">
+                    <img className="img-fluid" src={item} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00am - 10.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Body Building</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Taylor
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    10.00am - 12.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Cardio Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jack Sparrow
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    12.00pm - 2.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Weight Loose</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Robert Smith
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    2.00pm - 4.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Fitness Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Adam Phillips
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    4.00pm - 6.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Crossfit Class
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Alien
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00pm - 8.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Muscle Building
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Petter John
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00pm - 10.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Yoga Class</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jessy Reo
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div id="tab-3" className="tab-pane fade p-0">
             <div className="row g-5">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00am - 8.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Power Lifting</h5>
-                  <p className="text-uppercase text-secondary mb-0">John Deo</p>
+              {GuangOuList.map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="rounded py-1 px-1">
+                    <img className="img-fluid" src={item} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00am - 10.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Body Building</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Taylor
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    10.00am - 12.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Cardio Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jack Sparrow
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    12.00pm - 2.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Weight Loose</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Robert Smith
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    2.00pm - 4.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Fitness Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Adam Phillips
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    4.00pm - 6.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Crossfit Class
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Alien
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00pm - 8.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Muscle Building
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Petter John
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00pm - 10.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Yoga Class</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jessy Reo
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div id="tab-4" className="tab-pane fade p-0">
             <div className="row g-5">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00am - 8.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Power Lifting</h5>
-                  <p className="text-uppercase text-secondary mb-0">John Deo</p>
+              {DianRongList.map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="rounded py-1 px-1">
+                    <img className="img-fluid" src={item} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00am - 10.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Body Building</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Taylor
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    10.00am - 12.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Cardio Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jack Sparrow
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    12.00pm - 2.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Weight Loose</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Robert Smith
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    2.00pm - 4.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Fitness Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Adam Phillips
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    4.00pm - 6.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Crossfit Class
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Alien
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00pm - 8.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Muscle Building
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Petter John
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00pm - 10.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Yoga Class</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jessy Reo
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div id="tab-5" className="tab-pane fade p-0">
             <div className="row g-5">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00am - 8.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Power Lifting</h5>
-                  <p className="text-uppercase text-secondary mb-0">John Deo</p>
+              {DianZuList.map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="rounded py-1 px-1">
+                    <img className="img-fluid" src={item} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00am - 10.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Body Building</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Taylor
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    10.00am - 12.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Cardio Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jack Sparrow
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    12.00pm - 2.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Weight Loose</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Robert Smith
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    2.00pm - 4.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Fitness Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Adam Phillips
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    4.00pm - 6.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Crossfit Class
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Alien
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00pm - 8.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Muscle Building
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Petter John
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00pm - 10.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Yoga Class</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jessy Reo
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div id="tab-6" className="tab-pane fade p-0">
             <div className="row g-5">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00am - 8.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Power Lifting</h5>
-                  <p className="text-uppercase text-secondary mb-0">John Deo</p>
+              {JiGuangList.map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="rounded py-1 px-1">
+                    <img className="img-fluid" src={item} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00am - 10.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Body Building</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Taylor
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    10.00am - 12.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Cardio Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jack Sparrow
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    12.00pm - 2.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Weight Loose</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Robert Smith
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    2.00pm - 4.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Fitness Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Adam Phillips
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    4.00pm - 6.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Crossfit Class
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Alien
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00pm - 8.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Muscle Building
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Petter John
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00pm - 10.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Yoga Class</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jessy Reo
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div id="tab-7" className="tab-pane fade p-0">
             <div className="row g-5">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00am - 8.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Power Lifting</h5>
-                  <p className="text-uppercase text-secondary mb-0">John Deo</p>
+              {LianJieQiList.map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="rounded py-1 px-1">
+                    <img className="img-fluid" src={item} alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00am - 10.00am
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Body Building</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Taylor
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    10.00am - 12.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Cardio Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jack Sparrow
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    12.00pm - 2.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Weight Loose</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Robert Smith
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    2.00pm - 4.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Fitness Program
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Adam Phillips
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    4.00pm - 6.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Crossfit Class
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    James Alien
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    6.00pm - 8.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">
-                    Muscle Building
-                  </h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Petter John
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="bg-dark rounded text-center py-5 px-3">
-                  <h6 className="text-uppercase text-light mb-3">
-                    8.00pm - 10.00pm
-                  </h6>
-                  <h5 className="text-uppercase text-primary">Yoga Class</h5>
-                  <p className="text-uppercase text-secondary mb-0">
-                    Jessy Reo
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

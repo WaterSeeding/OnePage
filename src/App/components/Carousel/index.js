@@ -10,10 +10,13 @@ const Carousel = () => {
           <div className="carousel-item active">
             <img
               className="w-100"
-              src="/static/img/carousel-1.jpg"
+              src="/static/img/carousel-2.jpg"
               alt="Image"
             />
-            <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <div
+              className="carousel-caption d-flex flex-column align-items-center justify-content-center"
+              style={{ background: "rgba(34, 36, 41, .7)" }}
+            >
               <div className="p-3" style={{ maxWidth: 900 }}>
                 <h5 className="text-white text-uppercase">Best Gym Center</h5>
                 <h1 className="display-2 text-white text-uppercase mb-md-4">
@@ -31,10 +34,13 @@ const Carousel = () => {
           <div className="carousel-item">
             <img
               className="w-100"
-              src="/static/img/carousel-2.jpg"
+              src="/static/img/carousel-3.jpg"
               alt="Image"
             />
-            <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <div
+              className="carousel-caption d-flex flex-column align-items-center justify-content-center"
+              style={{ background: "rgba(34, 36, 41, .7)" }}
+            >
               <div className="p-3" style={{ maxWidth: 900 }}>
                 <h5 className="text-white text-uppercase">Best Gym Center</h5>
                 <h1 className="display-2 text-white text-uppercase mb-md-4">

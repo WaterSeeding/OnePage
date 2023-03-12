@@ -106,6 +106,13 @@ const Header = () => {
                   产品展示
                 </a>
                 <a
+                  className="nav-item nav-link font-weight-bold"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => gotoPage("Contact")}
+                >
+                  FAQ
+                </a>
+                <a
                   className={`nav-item nav-link font-weight-bold ${
                     activeItem === "Blog" && "active"
                   }`}
@@ -113,13 +120,6 @@ const Header = () => {
                   onClick={() => gotoPage("Blog")}
                 >
                   关于我们
-                </a>
-                <a
-                  className="nav-item nav-link font-weight-bold"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("Contact")}
-                >
-                  FAQ
                 </a>
               </div>
               <a
