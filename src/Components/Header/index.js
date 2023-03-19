@@ -80,15 +80,6 @@ const Header = () => {
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
-                    activeItem === "About" && "active"
-                  }`}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("About")}
-                >
-                  产品目录
-                </a>
-                <a
-                  className={`nav-item nav-link font-weight-bold ${
                     activeItem === "Classes" && "active"
                   }`}
                   style={{ cursor: "pointer" }}
@@ -106,18 +97,27 @@ const Header = () => {
                   产品展示
                 </a>
                 <a
-                  className="nav-item nav-link font-weight-bold"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("Contact")}
-                >
-                  FAQ
-                </a>
-                <a
                   className={`nav-item nav-link font-weight-bold ${
                     activeItem === "Blog" && "active"
                   }`}
                   style={{ cursor: "pointer" }}
                   onClick={() => gotoPage("Blog")}
+                >
+                  产品目录
+                </a>
+                <a
+                  className="nav-item nav-link font-weight-bold"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => gotoPage("Detail")}
+                >
+                  FAQ
+                </a>
+                <a
+                  className={`nav-item nav-link font-weight-bold ${
+                    activeItem === "About" && "active"
+                  }`}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => gotoPage("About")}
                 >
                   关于我们
                 </a>
@@ -125,7 +125,7 @@ const Header = () => {
               <a
                 className="btn btn-primary font-weight-bold py-md-3 px-md-5 d-none d-lg-block"
                 style={{ cursor: "pointer" }}
-                onClick={() => console.log("Join Us")}
+                onClick={() => gotoPage("Contact")}
               >
                 联系我们
               </a>

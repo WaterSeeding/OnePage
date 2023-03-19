@@ -5,7 +5,7 @@ const About = () => {
         <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: 500 }}>
           <div className="position-relative h-100">
             <img
-              className="position-absolute w-100 rounded"
+              className="position-absolute w-100 h-100 rounded"
               src="/static/img/main/RFQ.jpg"
               style={{ objectFit: "cover" }}
             />
