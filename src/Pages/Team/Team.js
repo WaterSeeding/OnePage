@@ -1,11 +1,12 @@
 import Hero from "./components/Hero";
 import TeamStart from "./components/TeamStart";
 
-const Team = () => {
+const Team = (props) => {
+  const { lang } = props;
   return (
     <>
-      <Hero />
-      <TeamStart />
+      <Hero lang={lang} />
+      <TeamStart lang={lang} />
     </>
   );
 };

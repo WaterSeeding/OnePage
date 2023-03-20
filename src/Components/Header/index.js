@@ -1,13 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const cnInfo = [
+  "深圳市佳创伟业科技有限公司",
+  "首页",
+  "发送询价",
+  "产品展示",
+  "产品目录",
+  "FAQ",
+  "关于我们",
+  "联系我们",
+];
+
+const enInfo = [
+  "ShenZhen JiaChuang WeiYe Technology Co.,Ltd",
+  "Home",
+  "Send RFQ",
+  "Product Pictures",
+  "Products",
+  "FAQ",
+  "About",
+  "Contact US",
+];
+
+const Header = (props) => {
+  const { lang, setLang } = props;
+  const [langInfo, setLangInfo] = useState(cnInfo);
   const [activeItem, setActiveItem] = useState("Main");
+
+  useEffect(() => {
+    setLangInfo(lang === "cn" ? cnInfo : enInfo);
+  }, [lang]);
+
   const navigate = useNavigate();
   const gotoPage = (name) => {
     navigate("/" + name);
     setActiveItem(name);
   };
+
   return (
     <div className="container-fluid bg-dark px-0">
       <div className="row gx-0">
@@ -26,12 +56,17 @@ const Header = () => {
             <div className="col-lg-7 px-5 text-start">
               <div className="h-100 d-inline-flex align-items-center py-2 me-4">
                 <i className="bi bi-geo-alt text-primary me-2"></i>
-                <h6 className="mb-0 font-weight-bold">深圳市佳创伟业科技有限公司</h6>
+                <h6 className="mb-0 font-weight-bold">{langInfo[0]}</h6>
               </div>
             </div>
             <div className="col-lg-5 px-5 text-end">
               <div className="d-inline-flex align-items-center py-2">
-                <a className="btn btn-light btn-square rounded-circle me-2">
+                <a
+                  className={`btn ${
+                    lang === "cn" ? "btn-light" : ""
+                  } btn-square rounded-circle me-2`}
+                  onClick={() => setLang("cn")}
+                >
                   <img
                     className="img-thumbnail"
                     style={{ width: 24, height: "auto" }}
@@ -39,7 +74,12 @@ const Header = () => {
                     alt=""
                   ></img>
                 </a>
-                <a className="btn btn-light btn-square rounded-circle me-2">
+                <a
+                  className={`btn ${
+                    lang === "en" ? "btn-light" : ""
+                  } btn-square rounded-circle me-2`}
+                  onClick={() => setLang("en")}
+                >
                   <img
                     className="img-thumbnail"
                     style={{ width: 24, height: "auto" }}
@@ -52,9 +92,12 @@ const Header = () => {
           </div>
           <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0 px-lg-5">
             <a className="navbar-brand d-block d-lg-none">
-              <h1 className="m-0 display-4 text-primary text-uppercase">
-                Gymster
-              </h1>
+              <img
+                className="img-thumbnail"
+                style={{ width: 80, height: "auto" }}
+                src="/static/img/main/logo.jpg"
+                alt=""
+              ></img>
             </a>
             <button
               type="button"
@@ -76,7 +119,7 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={() => gotoPage("Main")}
                 >
-                  首页
+                  {langInfo[1]}
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
@@ -85,7 +128,7 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={() => gotoPage("Classes")}
                 >
-                  发送询价
+                  {langInfo[2]}
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
@@ -94,7 +137,7 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={() => gotoPage("Team")}
                 >
-                  产品展示
+                  {langInfo[3]}
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
@@ -103,14 +146,14 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={() => gotoPage("Blog")}
                 >
-                  产品目录
+                  {langInfo[4]}
                 </a>
                 <a
                   className="nav-item nav-link font-weight-bold"
                   style={{ cursor: "pointer" }}
                   onClick={() => gotoPage("Detail")}
                 >
-                  FAQ
+                  {langInfo[5]}
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
@@ -119,7 +162,7 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={() => gotoPage("About")}
                 >
-                  关于我们
+                  {langInfo[6]}
                 </a>
               </div>
               <a
@@ -127,7 +170,7 @@ const Header = () => {
                 style={{ cursor: "pointer" }}
                 onClick={() => gotoPage("Contact")}
               >
-                联系我们
+                {langInfo[7]}
               </a>
             </div>
           </nav>

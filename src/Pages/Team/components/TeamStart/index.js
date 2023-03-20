@@ -1,5 +1,18 @@
-const TeamStart = () => {
+import { useEffect, useState } from "react";
+
+const cnInfo = ["系列"];
+
+const enInfo = ["series"];
+
+const TeamStart = (props) => {
   const dataList = Array.from({ length: 6 });
+  const { lang } = props;
+  const [langInfo, setLangInfo] = useState(cnInfo);
+
+  useEffect(() => {
+    setLangInfo(lang === "cn" ? cnInfo : enInfo);
+  }, [lang]);
+
   return (
     <div className="container-fluid p-5">
       <div className="row g-5">
@@ -18,7 +31,7 @@ const TeamStart = () => {
                 style={{ background: "rgba(34, 36, 41, .9)" }}
               >
                 <h5 className="text-uppercase text-light">{index + 1}</h5>
-                <p className="text-uppercase text-secondary m-0">系列</p>
+                <p className="text-uppercase text-secondary m-0">{langInfo[0]}</p>
               </div>
             </div>
           </div>

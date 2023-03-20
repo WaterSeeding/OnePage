@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
@@ -11,28 +12,30 @@ import Contact from "../Pages/Contact/Contact";
 import Detail from "../Pages/Detail/Detail";
 import Team from "../Pages/Team/Team";
 
-const App = () => {
+const App = (props) => {
+  const { lang, setLang } = props;
   return (
     <>
-      <Header />
+      <Header lang={lang} setLang={setLang} />
       <Outlet />
-      <Footer />
+      <Footer lang={lang} />
       <Back />
     </>
   );
 };
 
 const AppContainer = () => {
+  const [lang, setLang] = useState("cn");
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="/" element={<App lang={lang} setLang={setLang} />}>
           <Route path="Main" element={<Main />} />
-          <Route path="Classes" element={<ClassApp />} />
-          <Route path="Team" element={<Team />} />
+          <Route path="Classes" element={<ClassApp lang={lang} />} />
+          <Route path="Team" element={<Team lang={lang} />} />
           <Route path="Blog" element={<Blog />} />
-          <Route path="Detail" element={<Detail />} />
-          <Route path="About" element={<About />} />
+          <Route path="Detail" element={<Detail lang={lang} />} />
+          <Route path="About" element={<About lang={lang} />} />
           <Route path="Contact" element={<Contact />} />
         </Route>
       </Routes>

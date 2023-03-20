@@ -1,11 +1,12 @@
 import Hero from "./components/Hero";
 import DetailStart from "./components/DetailStart";
 
-const Detail = () => {
+const Detail = (props) => {
+  const { lang } = props;
   return (
     <>
-      <Hero />
-      <DetailStart />
+      <Hero lang={lang} />
+      <DetailStart lang={lang} />
     </>
   );
 };
