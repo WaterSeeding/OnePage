@@ -1,4 +1,39 @@
-const About = () => {
+import { useEffect, useState } from "react";
+const cnInfo = [
+  "*型号",
+  "*品牌",
+  "数量",
+  "目标价格",
+  "备注",
+  "姓名",
+  "公司",
+  "邮箱",
+  "电话",
+  "留言信息",
+  "询价",
+];
+
+const enInfo = [
+  "*Model number",
+  "*brand",
+  "quantity",
+  "Target price",
+  "remarks",
+  "name",
+  "company",
+  "mailbox",
+  "telephone",
+  "message",
+  "Make an inquiry",
+];
+
+const ClassApp = (props) => {
+  const { lang } = props;
+  const [langInfo, setLangInfo] = useState(cnInfo);
+  useEffect(() => {
+    setLangInfo(lang === "cn" ? cnInfo : enInfo);
+  }, [lang]);
+
   return (
     <div className="container-fluid p-5">
       <div className="row gx-5">
@@ -23,61 +58,61 @@ const About = () => {
               <form className="row g-3">
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    *型号
+                    {langInfo[0]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    *品牌
+                    {langInfo[1]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    数量
+                    {langInfo[2]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    目标价格
+                    {langInfo[3]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-12">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    备注
+                    {langInfo[4]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    姓名
+                    {langInfo[5]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    公司
+                    {langInfo[6]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-md-3">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    邮箱
+                    {langInfo[7]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-md-3">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    电话
+                    {langInfo[8]}
                   </label>
                   <input className="form-control" />
                 </div>
                 <div className="col-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
-                    留言信息
+                    {langInfo[9]}
                   </label>
                   <input className="form-control" />
                 </div>
@@ -86,7 +121,7 @@ const About = () => {
                   style={{ display: "flex", justifyContent: "flex-end" }}
                 >
                   <button type="submit" className="btn btn-outline-primary">
-                    询价
+                    {langInfo[10]}
                   </button>
                 </div>
               </form>
@@ -98,4 +133,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default ClassApp;

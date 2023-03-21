@@ -19,7 +19,7 @@ const cnInfo = [
 
 const enInfo = [
   "Contact us",
-  "深圳市福田区振华路飞亚达大厦西座518",
+  "518, West Building, Feiyada Building, Zhenhua Road, Futian District, Shenzhen",
   "Link access",
   "Home",
   "Send RFQ",
@@ -45,7 +45,7 @@ const Footer = (props) => {
       <div className="container-fluid bg-dark text-secondary px-5 mt-5">
         <div className="row gx-5">
           <div className="col-lg-8 col-md-6">
-            <div className="row gx-5">
+            <div className="row">
               <div className="col-lg-6 col-md-12 pt-5 mb-5">
                 <h4 className="text-uppercase text-light mb-4">{langInfo[0]}</h4>
                 <div className="d-flex mb-3">

@@ -1,18 +1,19 @@
 import "./Main.css";
-import Carousel from "./components/Carousel";
-import About from "./components/About";
-import ClassTimetable from "./components/ClassTimetable";
-import Testimonial from "./components/Testimonial";
-import Blog from "./components/Blog";
+import Poster from "./components/Carousel";
+import Rfq from "./components/About";
+import Brands from "./components/ClassTimetable";
+import Company from "./components/Testimonial";
+import Product from "./components/Blog";
 
-const Main = () => {
+const Main = (props) => {
+  const { lang } = props
   return (
     <>
-      <Carousel />
-      <ClassTimetable />
-      <About />
-      <Blog />
-      <Testimonial />
+      <Poster lang={lang} />
+      <Brands lang={lang} />
+      <Rfq lang={lang} />
+      <Product />
+      <Company lang={lang} />
     </>
   );
 };

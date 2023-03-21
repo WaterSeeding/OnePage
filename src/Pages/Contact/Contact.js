@@ -1,11 +1,12 @@
 import Hero from "./components/Hero";
 import ContactStart from "./components/ContactStart";
 
-const Contact = () => {
+const Contact = (props) => {
+  const { lang } = props;
   return (
     <>
-      <Hero />
-      <ContactStart />
+      <Hero lang={lang} />
+      <ContactStart lang={lang} />
     </>
   );
 };

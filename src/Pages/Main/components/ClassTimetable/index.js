@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const XinPianList = [
   "/static/img/main/芯片/1.jpg",
   "/static/img/main/芯片/2.jpg",
@@ -69,12 +71,40 @@ const LianJieQiList = [
   "/static/img/main/连接器/8.jpg",
 ];
 
-const ClassTimetable = () => {
+const cnInfo = [
+  "合作品牌",
+  "芯片",
+  "IGBT",
+  "光耦",
+  "电容",
+  "电阻",
+  "二三极管",
+  "连接器",
+];
+
+const enInfo = [
+  "Distribution Brands",
+  "IC Chip",
+  "IGBT",
+  "OCEP",
+  "Capacitance",
+  "Resistor",
+  "Transistor",
+  "Connector",
+];
+
+
+const ClassTimetable = (props) => {
+  const { lang } = props;
+  const [langInfo, setLangInfo] = useState(cnInfo);
+  useEffect(() => {
+    setLangInfo(lang === "cn" ? cnInfo : enInfo);
+  }, [lang]);
   return (
     <div className="container-fluid p-5">
       <div className="mb-5 text-center">
         {/* <h5 className="text-primary text-uppercase">Class Schedule</h5> */}
-        <h1 className="display-3 text-uppercase mb-0">合作品牌</h1>
+        <h1 className="display-3 text-uppercase mb-0">{langInfo[0]}</h1>
       </div>
       <div className="tab-class text-center">
         <ul className="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5">
@@ -84,7 +114,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-1"
             >
-              芯片
+              {langInfo[1]}
             </a>
           </li>
           <li className="nav-item">
@@ -93,7 +123,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-2"
             >
-              IGBT
+              {langInfo[2]}
             </a>
           </li>
           <li className="nav-item">
@@ -102,7 +132,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-3"
             >
-              光耦
+              {langInfo[3]}
             </a>
           </li>
           <li className="nav-item">
@@ -111,7 +141,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-4"
             >
-              电容
+              {langInfo[4]}
             </a>
           </li>
           <li className="nav-item">
@@ -120,7 +150,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-5"
             >
-              电阻
+              {langInfo[5]}
             </a>
           </li>
           <li className="nav-item">
@@ -129,7 +159,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-6"
             >
-              二三极管
+              {langInfo[6]}
             </a>
           </li>
           <li className="nav-item">
@@ -138,7 +168,7 @@ const ClassTimetable = () => {
               data-bs-toggle="pill"
               href="#tab-7"
             >
-              连接器
+              {langInfo[7]}
             </a>
           </li>
         </ul>

@@ -1,10 +1,11 @@
-const Hero = () => {
+const Hero = (props) => {
+  const { lang } = props;
   return (
     <div className="container-fluid bg-primary p-5 bg-hero mb-5">
       <div className="row py-5">
         <div className="col-12 text-center">
           <h1 className="display-2 text-uppercase text-white mb-md-4">
-            关于我们
+            {lang === "cn" ? "关于我们" : "About us"}
           </h1>
         </div>
       </div>
