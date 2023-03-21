@@ -1,5 +1,64 @@
-const BlogStart = () => {
+import { useEffect, useState } from "react";
+
+const cnInfo = [
+  "库存搜索",
+  "联系方式",
+  "电话：0755-82806855 /82806929",
+  "传真：0755-82806919",
+  "QQ：3117541604",
+  "手机：+86 13342986657",
+  "邮箱：vivi@jcwyic.com",
+  "whatsapp：+86 13342986657",
+  "Skype：vivi@jcwyic.com",
+  "联系人：陈先生",
+  "快递查询",
+  "FEDEX 快递",
+  "SF 快递",
+  "DHL 快递",
+  "TNT 快递",
+  "UPS 快递",
+  "EMS 快递",
+  "库存型号",
+  "品牌",
+  "封装",
+  "数量",
+  "资料",
+  "年份",
+];
+
+const enInfo = [
+  "Inventory search",
+  "Contact information",
+  "telephone：0755-82806855 /82806929",
+  "facsimile：0755-82806919",
+  "QQ：3117541604",
+  "phone：+86 13342986657",
+  "email：vivi@jcwyic.com",
+  "whatsapp：+86 13342986657",
+  "Skype：vivi@jcwyic.com",
+  "Contact person: Mr. Chen",
+  "Express inquiry",
+  "FEDEX Express",
+  "SF Express",
+  "DHL Express",
+  "TNT Express",
+  "UPS Express",
+  "EMS Express",
+  "Part No.",
+  "Brand",
+  "Package",
+  "Qty",
+  "Pdf",
+  "D/C",
+];
+
+const Blog = (props) => {
   const dataList = Array.from({ length: 10 });
+  const { lang } = props;
+  const [langInfo, setLangInfo] = useState(cnInfo);
+  useEffect(() => {
+    setLangInfo(lang === "cn" ? cnInfo : enInfo);
+  }, [lang]);
   return (
     <div className="container-fluid p-5">
       <div className="row g-5">
@@ -9,7 +68,7 @@ const BlogStart = () => {
               <input
                 type="text"
                 className="form-control p-3"
-                placeholder="库存搜索"
+                placeholder={langInfo[0]}
               />
               <button className="btn btn-primary px-4">
                 <i className="bi bi-search"></i>
@@ -17,58 +76,67 @@ const BlogStart = () => {
             </div>
           </div>
           <div className="mb-5">
-            <h3 className="text-uppercase mb-4">联系方式</h3>
+            <h3 className="text-uppercase mb-4">{langInfo[1]}</h3>
             <div className="d-flex flex-column justify-content-start bg-dark rounded p-4">
               <a
                 className="fs-5 fw-bold text-light text-uppercase mb-2"
                 href="#"
               >
                 <i className="bi bi-arrow-right text-primary me-2"></i>
-                TEL：0755-82806855 /82806929
+                {langInfo[2]}
               </a>
               <a
                 className="fs-5 fw-bold text-light text-uppercase mb-2"
                 href="#"
               >
                 <i className="bi bi-arrow-right text-primary me-2"></i>
-                FAX：0755-82806919
+                {langInfo[3]}
               </a>
               <a
                 className="fs-5 fw-bold text-light text-uppercase mb-2"
                 href="#"
               >
                 <i className="bi bi-arrow-right text-primary me-2"></i>
-                QQ：3117541604
+                {langInfo[4]}
               </a>
               <a
                 className="fs-5 fw-bold text-light text-uppercase mb-2"
                 href="#"
               >
-                <i className="bi bi-arrow-right text-primary me-2"></i>手机：+86
-                13342986657
-              </a>
-              <a className="fs-5 fw-bold text-light text-uppercase mb-2" href="#">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
-                联系人：陈先生
+                {langInfo[5]}
               </a>
-              <a className="fs-5 fw-bold text-light text-uppercase mb-2" href="#">
+              <a
+                className="fs-5 fw-bold text-light text-uppercase mb-2"
+                href="#"
+              >
                 <i className="bi bi-arrow-right text-primary me-2"></i>
-                whatsapp：+86 13342986657
+                {langInfo[6]}
               </a>
-              <a className="fs-5 fw-bold text-light text-uppercase mb-2" href="#">
+              <a
+                className="fs-5 fw-bold text-light text-uppercase mb-2"
+                href="#"
+              >
                 <i className="bi bi-arrow-right text-primary me-2"></i>
-                Skype：vivi@jcwyic.com
+                {langInfo[7]}
+              </a>
+              <a
+                className="fs-5 fw-bold text-light text-uppercase mb-2"
+                href="#"
+              >
+                <i className="bi bi-arrow-right text-primary me-2"></i>
+                {langInfo[8]}
               </a>
               <a className="fs-5 fw-bold text-light text-uppercase" href="#">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
-                Email：vivi@jcwyic.com
+                {langInfo[9]}
               </a>
             </div>
           </div>
           <div className="mb-5">
-            <h3 className="text-uppercase mb-4">快递查询</h3>
+            <h3 className="text-uppercase mb-4">{langInfo[10]}</h3>
             <div className="bg-dark rounded p-4">
-              <div className="d-flex justify-content-between overflow-hidden mb-3 bg-light">
+              <div className="d-flex overflow-hidden mb-3 bg-light">
                 <img
                   className="img-fluid flex-shrink-0 rounded-start"
                   src="/static/img/main/kuaidi/fedex.gif"
@@ -77,12 +145,13 @@ const BlogStart = () => {
                 />
                 <a
                   href=""
+                  style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
-                  联邦快递（ FedEx）
+                  {langInfo[11]}
                 </a>
               </div>
-              <div className="d-flex justify-content-between overflow-hidden mb-3 bg-light">
+              <div className="d-flex overflow-hidden mb-3 bg-light">
                 <img
                   className="img-fluid flex-shrink-0 rounded-start"
                   src="/static/img/main/kuaidi/sf.gif"
@@ -91,12 +160,13 @@ const BlogStart = () => {
                 />
                 <a
                   href=""
+                  style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
-                  联邦快递（ FedEx）
+                  {langInfo[12]}
                 </a>
               </div>
-              <div className="d-flex justify-content-between overflow-hidden mb-3 bg-light">
+              <div className="d-flex overflow-hidden mb-3 bg-light">
                 <img
                   className="img-fluid flex-shrink-0 rounded-start"
                   src="/static/img/main/kuaidi/ddh.gif"
@@ -105,12 +175,13 @@ const BlogStart = () => {
                 />
                 <a
                   href=""
+                  style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
-                  联邦快递（ FedEx）
+                  {langInfo[13]}
                 </a>
               </div>
-              <div className="d-flex justify-content-between overflow-hidden mb-3 bg-light">
+              <div className="d-flex overflow-hidden mb-3 bg-light">
                 <img
                   className="img-fluid flex-shrink-0 rounded-start"
                   src="/static/img/main/kuaidi/tnt.gif"
@@ -119,12 +190,13 @@ const BlogStart = () => {
                 />
                 <a
                   href=""
+                  style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
-                  联邦快递（ FedEx）
+                  {langInfo[14]}
                 </a>
               </div>
-              <div className="d-flex justify-content-between overflow-hidden mb-3 bg-light">
+              <div className="d-flex overflow-hidden mb-3 bg-light">
                 <img
                   className="img-fluid flex-shrink-0 rounded-start"
                   src="/static/img/main/kuaidi/ups.gif"
@@ -133,12 +205,13 @@ const BlogStart = () => {
                 />
                 <a
                   href=""
+                  style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
-                  联邦快递（ FedEx）
+                  {langInfo[15]}
                 </a>
               </div>
-              <div className="d-flex justify-content-between overflow-hidden bg-light">
+              <div className="d-flex overflow-hidden bg-light">
                 <img
                   className="img-fluid flex-shrink-0 rounded-start"
                   src="/static/img/main/kuaidi/ems.gif"
@@ -147,9 +220,10 @@ const BlogStart = () => {
                 />
                 <a
                   href=""
+                  style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
-                  联邦快递（ FedEx）
+                  {langInfo[16]}
                 </a>
               </div>
             </div>
@@ -168,19 +242,10 @@ const BlogStart = () => {
                       style={{ width: 80, height: 80 }}
                     />
                     <div className="text-start ps-4">
-                      <h5 className="mb-3">Software Engineer</h5>
-                      <span className="text-truncate me-3">
-                        <i className="fa fa-map-marker-alt text-primary me-2"></i>
-                        New York, USA
-                      </span>
-                      <span className="text-truncate me-3">
-                        <i className="far fa-clock text-primary me-2"></i>Full
-                        Time
-                      </span>
-                      <span className="text-truncate me-0">
-                        <i className="far fa-money-bill-alt text-primary me-2"></i>
-                        $123 - $456
-                      </span>
+                      <h5 className="mb-3">{`${langInfo[17]}: 74HC573PW`}</h5>
+                      <span className="text-truncate me-3">{`${langInfo[18]}: PHI`}</span>
+                      <span className="text-truncate me-3">{`${langInfo[19]}: SOP`}</span>
+                      <span className="text-truncate me-0">{`${langInfo[20]}: 3000`}</span>
                     </div>
                   </div>
                   <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
@@ -189,12 +254,12 @@ const BlogStart = () => {
                         <i className="far fa-heart text-primary"></i>
                       </a>
                       <a className="btn btn-primary" href="">
-                        Apply Now
+                        {`${langInfo[21]}`}
                       </a>
                     </div>
                     <small className="text-truncate">
                       <i className="far fa-calendar-alt text-primary me-2"></i>
-                      Date Line: 01 Jan, 2045
+                      {`${langInfo[22]}: 05+`}
                     </small>
                   </div>
                 </div>
@@ -242,4 +307,4 @@ const BlogStart = () => {
   );
 };
 
-export default BlogStart;
+export default Blog;

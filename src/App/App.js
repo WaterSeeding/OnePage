@@ -33,7 +33,7 @@ const AppContainer = () => {
           <Route path="Main" element={<Main lang={lang} />} />
           <Route path="Classes" element={<ClassApp lang={lang} />} />
           <Route path="Team" element={<Team lang={lang} />} />
-          <Route path="Blog" element={<Blog />} />
+          <Route path="Blog" element={<Blog lang={lang} />} />
           <Route path="Detail" element={<Detail lang={lang} />} />
           <Route path="About" element={<About lang={lang} />} />
           <Route path="Contact" element={<Contact lang={lang} />} />

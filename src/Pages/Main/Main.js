@@ -12,7 +12,7 @@ const Main = (props) => {
       <Poster lang={lang} />
       <Brands lang={lang} />
       <Rfq lang={lang} />
-      <Product />
+      <Product lang={lang} />
       <Company lang={lang} />
     </>
   );
