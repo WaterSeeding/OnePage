@@ -22,7 +22,7 @@ const cnInfo = [
   "品牌",
   "封装",
   "数量",
-  "资料",
+  "资料超链",
   "年份",
 ];
 
@@ -48,7 +48,7 @@ const enInfo = [
   "Brand",
   "Package",
   "Qty",
-  "Pdf",
+  "资料超链",
   "D/C",
 ];
 
@@ -250,9 +250,6 @@ const Blog = (props) => {
                   </div>
                   <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                     <div className="d-flex mb-3">
-                      <a className="btn btn-light btn-square me-3" href="">
-                        <i className="far fa-heart text-primary"></i>
-                      </a>
                       <a className="btn btn-primary" href="">
                         {`${langInfo[21]}`}
                       </a>

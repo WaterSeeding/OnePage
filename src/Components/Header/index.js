@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const cnInfo = [
   "深圳市佳创伟业科技有限公司",
@@ -33,10 +33,16 @@ const Header = (props) => {
   }, [lang]);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
   const gotoPage = (name) => {
     navigate("/" + name);
-    setActiveItem(name);
   };
+
+  useEffect(() => {
+    let name = location.pathname.replace("/", "")
+    setActiveItem(name);
+  }, [location]);
 
   return (
     <div className="container-fluid bg-dark px-0">
@@ -55,7 +61,6 @@ const Header = (props) => {
           <div className="row gx-0 bg-secondary d-none d-lg-flex">
             <div className="col-lg-7 px-5 text-start">
               <div className="h-100 d-inline-flex align-items-center py-2 me-4">
-                <i className="bi bi-geo-alt text-primary me-2"></i>
                 <h6 className="mb-0 font-weight-bold">{langInfo[0]}</h6>
               </div>
             </div>
@@ -114,10 +119,10 @@ const Header = (props) => {
               <div className="navbar-nav mr-auto py-0">
                 <a
                   className={`nav-item nav-link font-weight-bold ${
-                    activeItem === "Main" && "active"
+                    activeItem === "" && "active"
                   }`}
                   style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("Main")}
+                  onClick={() => gotoPage("")}
                 >
                   {langInfo[1]}
                 </a>

@@ -15,8 +15,8 @@ const cnInfo = [
 
 const enInfo = [
   "Company introduction",
-  `ShenZhen JiaChuang WeiYe Technology Co., Ltd is a specialized supplier of electronic components, integrated circuits have many years experience in this filed over 10 years , now has a large number of popular electronic components, products widely used in civil, industrial, military and other various fields.We have reliable source to deal with many famous brands.Welcome you to send enquiry and visit our company !`,
-  `ShenZhen JiaChuang WeiYe Technology Co., Ltd is a specialized supplier of electronic components, integrated circuits have many years experience in this filed over 10 years , now has a large number of popular electronic components, products widely used in civil, industrial, military and other various fields.We have reliable source to deal with many famous brands.Welcome you to send enquiry and visit our company !`,
+  `ShenZhen JiaChuang WeiYe Technology Co., Ltd is a specialized supplier of electronic components, integrated circuits have many years experience in this filed over 20 years , now has a large number of popular electronic components, products widely used in civil, industrial, military and other various fields.We have reliable source to deal with many famous brands.Welcome you to send enquiry and visit our company !`,
+  `ShenZhen JiaChuang WeiYe Technology Co., Ltd is a specialized supplier of electronic components, integrated circuits have many years experience in this filed over 20 years , now has a large number of popular electronic components, products widely used in civil, industrial, military and other various fields.We have reliable source to deal with many famous brands.Welcome you to send enquiry and visit our company !`,
 ];
 
 const About = (props) => {

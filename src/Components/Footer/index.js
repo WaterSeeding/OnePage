@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const cnInfo = [
   "联系我们",
@@ -40,14 +41,23 @@ const Footer = (props) => {
   useEffect(() => {
     setLangInfo(lang === "cn" ? cnInfo : enInfo);
   }, [lang]);
+
+  const navigate = useNavigate();
+  const gotoPage = (name) => {
+    navigate("/" + name);
+    window.$("html, body").animate({ scrollTop: 0 }, 300, "easeInOutExpo");
+  };
+
   return (
     <>
       <div className="container-fluid bg-dark text-secondary px-5 mt-5">
         <div className="row gx-5">
-          <div className="col-lg-8 col-md-6">
+          <div className="col-lg-7 col-md-6">
             <div className="row">
               <div className="col-lg-6 col-md-12 pt-5 mb-5">
-                <h4 className="text-uppercase text-light mb-4">{langInfo[0]}</h4>
+                <h4 className="text-uppercase text-light mb-4">
+                  {langInfo[0]}
+                </h4>
                 <div className="d-flex mb-3">
                   <i className="bi bi-geo-alt text-primary me-2"></i>
                   <p className="mb-0">{langInfo[1]}</p>
@@ -62,13 +72,16 @@ const Footer = (props) => {
                 </div>
               </div>
               <div className="col-lg-6 col-md-12 pt-0 pt-lg-5 mb-5">
-                <h4 className="text-uppercase text-light mb-4">{langInfo[2]}</h4>
+                <h4 className="text-uppercase text-light mb-4">
+                  {langInfo[2]}
+                </h4>
                 <div className="row">
                   <div className="col-lg-6 col-md-12">
                     <div className="d-flex flex-column justify-content-start">
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
+                        onClick={() => gotoPage("")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[3]}
@@ -76,6 +89,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
+                        onClick={() => gotoPage("Classes")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[4]}
@@ -83,6 +97,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
+                        onClick={() => gotoPage("Detail")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[5]}
@@ -94,6 +109,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
+                        onClick={() => gotoPage("Team")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[6]}
@@ -101,6 +117,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
+                        onClick={() => gotoPage("Blog")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[7]}
@@ -108,6 +125,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
+                        onClick={() => gotoPage("About")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[8]}
@@ -118,22 +136,18 @@ const Footer = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-5">
-              <h4 className="text-uppercase text-white mb-4">{langInfo[9]}</h4>
-              <h6 className="text-uppercase text-white mb-4">
-              {langInfo[10]}
-              </h6>
-              <form action="">
-                <div className="input-group">
-                  <input
-                    type="text"
-                    className="form-control border-white p-3"
-                    placeholder={langInfo[11]}
-                  />
-                  <button className="btn btn-dark">{langInfo[12]}</button>
-                </div>
-              </form>
+          <div className="col-lg-5 col-md-6">
+            <div className="d-flex flex-row align-items-center justify-content-between text-center h-100 bg-primary p-5">
+              <img
+                className="rounded"
+                src="/static/img/main/weixin.png"
+                style={{ width: 200, height: 200, objectFit: "cover" }}
+              />
+              <img
+                className="rounded"
+                src="/static/img/main/whatsapp.png"
+                style={{ width: 200, height: 200, objectFit: "cover" }}
+              />
             </div>
           </div>
         </div>
