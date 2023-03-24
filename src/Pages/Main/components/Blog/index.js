@@ -250,7 +250,11 @@ const Blog = (props) => {
                   </div>
                   <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                     <div className="d-flex mb-3">
-                      <a className="btn btn-primary" href="">
+                      <a
+                        className="btn btn-primary"
+                        href="http://www.alldatasheet.net/view.jsp?Searchword=74HC573PW"
+                        target="_blank"
+                      >
                         {`${langInfo[21]}`}
                       </a>
                     </div>

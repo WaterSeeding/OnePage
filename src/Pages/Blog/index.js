@@ -1,12 +1,12 @@
 import Hero from "./components/Hero";
-import BlogStart from "./components/BlogStart";
+import Product from "../Main/components/Blog";
 
 const Blog = (props) => {
   const { lang } = props
   return (
     <>
       <Hero lang={lang} />
-      <BlogStart lang={lang} />
+      <Product lang={lang} />
     </>
   );
 };
