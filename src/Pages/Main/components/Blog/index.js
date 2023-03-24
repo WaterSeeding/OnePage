@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "../../../_axios";
 
 const cnInfo = [
   "库存搜索",
@@ -56,9 +57,19 @@ const Blog = (props) => {
   const dataList = Array.from({ length: 10 });
   const { lang } = props;
   const [langInfo, setLangInfo] = useState(cnInfo);
+
   useEffect(() => {
     setLangInfo(lang === "cn" ? cnInfo : enInfo);
   }, [lang]);
+
+  useEffect(() => {
+    axios
+      .post("/back-server/api/inventory", { pageSize: 10, currentPage: 1 })
+      .then((data) => {
+        console.log("data", data);
+      });
+  }, []);
+
   return (
     <div className="container-fluid p-5">
       <div className="row g-5">
@@ -269,26 +280,16 @@ const Blog = (props) => {
             <div className="col-12">
               <nav aria-label="Page navigation">
                 <ul className="pagination pagination-lg justify-content-start m-0">
-                  <li className="page-item disabled">
+                  <li className="page-item">
+                    <a className="page-link" href="#">
+                      首页
+                    </a>
+                  </li>
+                  <li className="page-item">
                     <a className="page-link" href="#" aria-label="Previous">
                       <span aria-hidden="true">
                         <i className="bi bi-arrow-left"></i>
                       </span>
-                    </a>
-                  </li>
-                  <li className="page-item active">
-                    <a className="page-link" href="#">
-                      1
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">
-                      2
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">
-                      3
                     </a>
                   </li>
                   <li className="page-item">
@@ -296,6 +297,11 @@ const Blog = (props) => {
                       <span aria-hidden="true">
                         <i className="bi bi-arrow-right"></i>
                       </span>
+                    </a>
+                  </li>
+                  <li className="page-item">
+                    <a className="page-link" href="#">
+                      尾页
                     </a>
                   </li>
                 </ul>
