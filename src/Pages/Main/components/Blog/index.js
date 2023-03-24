@@ -53,10 +53,25 @@ const enInfo = [
   "D/C",
 ];
 
+const initPageInfo = {
+  pageSize: 10,
+  currentPage: 1,
+  model: "",
+};
+
+const initPageData = {
+  data: [],
+  totalCount: 0,
+  totalPage: 0,
+};
+
 const Blog = (props) => {
   const dataList = Array.from({ length: 10 });
   const { lang } = props;
   const [langInfo, setLangInfo] = useState(cnInfo);
+  const [pageInfo, setPageInfo] = useState(initPageInfo);
+  const [pageData, setPageData] = useState(initPageData);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     setLangInfo(lang === "cn" ? cnInfo : enInfo);
@@ -66,9 +81,13 @@ const Blog = (props) => {
     axios
       .post("/back-server/api/inventory", { pageSize: 10, currentPage: 1 })
       .then((data) => {
-        console.log("data", data);
+        setPageData(data.value);
       });
   }, []);
+
+  useEffect(() => {
+    console.log("pageData", pageData);
+  }, [pageData]);
 
   return (
     <div className="container-fluid p-5">
@@ -80,8 +99,10 @@ const Blog = (props) => {
                 type="text"
                 className="form-control p-3"
                 placeholder={langInfo[0]}
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
               />
-              <button className="btn btn-primary px-4">
+              <button className="btn btn-primary px-4" onClick={() => console.log(searchValue)}>
                 <i className="bi bi-search"></i>
               </button>
             </div>
@@ -242,7 +263,7 @@ const Blog = (props) => {
         </div>
         <div className="col-lg-8">
           <div className="row g-5 pt-4">
-            {dataList.map((value, index) => (
+            {pageData.data.map((item, index) => (
               <div key={index} className="job-item p-4 mt-0 mb-0">
                 <div className="row g-4">
                   <div className="col-sm-12 col-md-8 d-flex align-items-center">
@@ -253,17 +274,17 @@ const Blog = (props) => {
                       style={{ width: 80, height: 80 }}
                     />
                     <div className="text-start ps-4">
-                      <h5 className="mb-3">{`${langInfo[17]}: 74HC573PW`}</h5>
-                      <span className="text-truncate me-3">{`${langInfo[18]}: PHI`}</span>
-                      <span className="text-truncate me-3">{`${langInfo[19]}: SOP`}</span>
-                      <span className="text-truncate me-0">{`${langInfo[20]}: 3000`}</span>
+                      <h5 className="mb-3">{`${langInfo[17]}: ${item.model}`}</h5>
+                      <span className="text-truncate me-3">{`${langInfo[18]}: ${item.brand}`}</span>
+                      <span className="text-truncate me-3">{`${langInfo[19]}: ${item.fengzhuang}`}</span>
+                      <span className="text-truncate me-0">{`${langInfo[20]}: ${item.quantity}`}</span>
                     </div>
                   </div>
                   <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                     <div className="d-flex mb-3">
                       <a
                         className="btn btn-primary"
-                        href="http://www.alldatasheet.net/view.jsp?Searchword=74HC573PW"
+                        href={`http://www.alldatasheet.net/view.jsp?Searchword=${item.model}`}
                         target="_blank"
                       >
                         {`${langInfo[21]}`}
@@ -271,7 +292,7 @@ const Blog = (props) => {
                     </div>
                     <small className="text-truncate">
                       <i className="far fa-calendar-alt text-primary me-2"></i>
-                      {`${langInfo[22]}: 05+`}
+                      {`${langInfo[22]}: ${item.year}`}
                     </small>
                   </div>
                 </div>
