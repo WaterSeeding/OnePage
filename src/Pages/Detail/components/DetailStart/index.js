@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "../../../_axios";
 
 const cnInfo = [
   "常见问题",
@@ -54,13 +55,41 @@ const enInfo = [
   "Submit a question",
 ];
 
+const initQuestionInfo = {
+  name: "",
+  email: "",
+  phone: "",
+  question: "",
+};
+
 const DetailStart = (props) => {
   const { lang } = props;
   const [langInfo, setLangInfo] = useState(cnInfo);
+  const [questionInfo, setQuestionInfo] = useState(initQuestionInfo);
 
   useEffect(() => {
     setLangInfo(lang === "cn" ? cnInfo : enInfo);
   }, [lang]);
+
+  const submitQuestionData = (questionInfo) => {
+    let isKongKeyValue = false;
+    Object.keys(questionInfo).forEach((key) => {
+      if (!questionInfo[key]) {
+        isKongKeyValue = true;
+      }
+    });
+    if (isKongKeyValue) {
+      alert(
+        lang === "cn"
+          ? "请将问题信息输入完整!"
+          : "Please enter the question information completely!"
+      );
+    } else {
+      axios.post("/back-server/api/subscribe", questionInfo).then((data) => {
+        console.log("data", data);
+      });
+    }
+  };
 
   return (
     <div className="container-fluid p-5">
@@ -70,7 +99,7 @@ const DetailStart = (props) => {
             <h3 className="text-uppercase mb-5">{langInfo[0]}</h3>
             <div className="d-flex mb-3">
               <img
-                src="/static/img/user.jpg"
+                src="/static/img/customer.jpg"
                 className="img-fluid rounded"
                 style={{ width: 45, height: 45 }}
                 alt=""
@@ -104,7 +133,7 @@ const DetailStart = (props) => {
             </div>
             <div className="d-flex mb-2">
               <img
-                src="/static/img/user.jpg"
+                src="/static/img/customer.jpg"
                 className="img-fluid rounded"
                 style={{ width: 45, height: 45 }}
                 alt=""
@@ -138,7 +167,7 @@ const DetailStart = (props) => {
             </div>
             <div className="d-flex mb-2">
               <img
-                src="/static/img/user.jpg"
+                src="/static/img/customer.jpg"
                 className="img-fluid rounded"
                 style={{ width: 45, height: 45 }}
                 alt=""
@@ -172,7 +201,7 @@ const DetailStart = (props) => {
             </div>
             <div className="d-flex mb-2">
               <img
-                src="/static/img/user.jpg"
+                src="/static/img/customer.jpg"
                 className="img-fluid rounded"
                 style={{ width: 45, height: 45 }}
                 alt=""
@@ -227,6 +256,14 @@ const DetailStart = (props) => {
                     className="form-control bg-white border-0"
                     placeholder={langInfo[19]}
                     style={{ height: 55 }}
+                    defaultValue={questionInfo.name}
+                    onChange={(e) => {
+                      setQuestionInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.name = e.target.value;
+                        return newInfo;
+                      });
+                    }}
                   />
                 </div>
                 <div className="col-12 col-sm-6">
@@ -235,6 +272,14 @@ const DetailStart = (props) => {
                     className="form-control bg-white border-0"
                     placeholder={langInfo[20]}
                     style={{ height: 55 }}
+                    defaultValue={questionInfo.phone}
+                    onChange={(e) => {
+                      setQuestionInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.phone = e.target.value;
+                        return newInfo;
+                      });
+                    }}
                   />
                 </div>
                 <div className="col-12">
@@ -243,6 +288,14 @@ const DetailStart = (props) => {
                     className="form-control bg-white border-0"
                     placeholder={langInfo[21]}
                     style={{ height: 55 }}
+                    defaultValue={questionInfo.email}
+                    onChange={(e) => {
+                      setQuestionInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.email = e.target.value;
+                        return newInfo;
+                      });
+                    }}
                   />
                 </div>
                 <div className="col-12">
@@ -250,12 +303,23 @@ const DetailStart = (props) => {
                     className="form-control bg-white border-0"
                     rows="5"
                     placeholder={langInfo[22]}
+                    defaultValue={questionInfo.question}
+                    onChange={(e) => {
+                      setQuestionInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.question = e.target.value;
+                        return newInfo;
+                      });
+                    }}
                   ></textarea>
                 </div>
                 <div className="col-12">
-                  <button className="btn btn-primary w-100 py-3" type="submit">
+                  <a
+                    className="btn btn-primary w-100 py-3"
+                    onClick={() => submitQuestionData(questionInfo)}
+                  >
                     {langInfo[23]}
-                  </button>
+                  </a>
                 </div>
               </div>
             </form>

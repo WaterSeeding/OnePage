@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import axios from "../../../_axios";
+
 const cnInfo = [
   "*型号",
   "*品牌",
@@ -27,12 +29,63 @@ const enInfo = [
   "Make an inquiry",
 ];
 
+const testConsultationInfo = {
+  model: "MC14094BDTR2G",
+  brand: "ON",
+  quantity: "20",
+  target_price: "500",
+  remark: "国产的",
+  name: "张先生",
+  company: "腾讯",
+  email: "13826506407@139.com",
+  phone: "13826506407",
+  message: "要购买",
+};
+
+const initConsultationInfo = {
+  model: "",
+  brand: "",
+  quantity: "",
+  target_price: "",
+  remark: "",
+  name: "",
+  company: "",
+  email: "",
+  phone: "",
+  message: "",
+};
+
 const ClassApp = (props) => {
   const { lang } = props;
   const [langInfo, setLangInfo] = useState(cnInfo);
+  const [consultationInfo, setConsultationInfo] =
+    useState(initConsultationInfo);
+
   useEffect(() => {
     setLangInfo(lang === "cn" ? cnInfo : enInfo);
   }, [lang]);
+
+  const reqConsultationData = (consultationInfo) => {
+    let isKongKeyValue = false;
+    Object.keys(consultationInfo).forEach((key) => {
+      if (!consultationInfo[key]) {
+        isKongKeyValue = true;
+      } else if (key === "target_price") {
+        consultationInfo[key] = Number(consultationInfo[key]);
+      }
+    });
+    if (isKongKeyValue) {
+      alert(
+        lang === "cn"
+          ? "请将询价信息输入完整!"
+          : "Please enter the inquiry information completely!"
+      );
+    } else {
+      axios.post("/back-server/api/enquiry", consultationInfo).then((data) => {
+        console.log("data", data);
+      });
+    }
+  };
 
   return (
     <div className="container-fluid p-5">
@@ -60,69 +113,172 @@ const ClassApp = (props) => {
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[0]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.model}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.model = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[1]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.brand}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.brand = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[2]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.quantity}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.quantity = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[3]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.target_price}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.target_price = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-12">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[4]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.remark}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.remark = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[5]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.name}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.name = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-md-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[6]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.company}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.company = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-md-3">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[7]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.email}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.email = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-md-3">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[8]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.phone}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.phone = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div className="col-6">
                   <label className="form-label" style={{ color: "#FB5B21" }}>
                     {langInfo[9]}
                   </label>
-                  <input className="form-control" />
+                  <input
+                    className="form-control"
+                    defaultValue={consultationInfo.message}
+                    onChange={(e) => {
+                      setConsultationInfo((info) => {
+                        let newInfo = Object.assign(info);
+                        newInfo.message = e.target.value;
+                        return newInfo;
+                      });
+                    }}
+                  />
                 </div>
                 <div
                   className="col-12"
                   style={{ display: "flex", justifyContent: "flex-end" }}
                 >
-                  <button type="submit" className="btn btn-outline-primary">
+                  <a
+                    className="btn btn-outline-primary"
+                    onClick={() => reqConsultationData(consultationInfo)}
+                  >
                     {langInfo[10]}
-                  </button>
+                  </a>
                 </div>
               </form>
             </div>

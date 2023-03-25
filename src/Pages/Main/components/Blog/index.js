@@ -49,7 +49,7 @@ const enInfo = [
   "Brand",
   "Package",
   "Qty",
-  "资料超链",
+  "Pdf",
   "D/C",
 ];
 
@@ -78,16 +78,37 @@ const Blog = (props) => {
   }, [lang]);
 
   useEffect(() => {
-    axios
-      .post("/back-server/api/inventory", { pageSize: 10, currentPage: 1 })
-      .then((data) => {
-        setPageData(data.value);
-      });
+    searchPageData(pageInfo);
   }, []);
 
-  useEffect(() => {
-    console.log("pageData", pageData);
-  }, [pageData]);
+  const searchPageData = (pageInfo) => {
+    handlePageData(pageInfo);
+  };
+
+  const selectPageData = (pageInfo) => {
+    setPageInfo(pageInfo);
+    handlePageData(pageInfo);
+  };
+
+  const handlePageData = (pageInfo) => {
+    axios.post("/back-server/api/inventory", pageInfo).then((data) => {
+      if (data.value && Array.isArray(data.value.data)) {
+        setPageData(data.value);
+      } else if (
+        data.value &&
+        Object.prototype.toString.call(data.value.data) === "[object Object]"
+      ) {
+        let pageData = {
+          data: [data.value.data],
+          totalCount: data.value.totalCount,
+          totalPage: data.value.totalPage,
+        };
+        setPageData(pageData);
+      } else {
+        setPageData(data.value);
+      }
+    });
+  };
 
   return (
     <div className="container-fluid p-5">
@@ -102,7 +123,20 @@ const Blog = (props) => {
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
               />
-              <button className="btn btn-primary px-4" onClick={() => console.log(searchValue)}>
+              <button
+                className="btn btn-primary px-4"
+                onClick={() =>
+                  setPageInfo(() => {
+                    let pageInfo = {
+                      pageSize: 10,
+                      currentPage: 1,
+                      model: searchValue,
+                    };
+                    searchPageData(pageInfo);
+                    return pageInfo;
+                  })
+                }
+              >
                 <i className="bi bi-search"></i>
               </button>
             </div>
@@ -263,71 +297,183 @@ const Blog = (props) => {
         </div>
         <div className="col-lg-8">
           <div className="row g-5 pt-4">
-            {pageData.data.map((item, index) => (
-              <div key={index} className="job-item p-4 mt-0 mb-0">
-                <div className="row g-4">
-                  <div className="col-sm-12 col-md-8 d-flex align-items-center">
-                    <img
-                      className="flex-shrink-0 img-fluid border rounded"
-                      src="/static/img/img/com-logo-1.jpg"
-                      alt=""
-                      style={{ width: 80, height: 80 }}
-                    />
-                    <div className="text-start ps-4">
-                      <h5 className="mb-3">{`${langInfo[17]}: ${item.model}`}</h5>
-                      <span className="text-truncate me-3">{`${langInfo[18]}: ${item.brand}`}</span>
-                      <span className="text-truncate me-3">{`${langInfo[19]}: ${item.fengzhuang}`}</span>
-                      <span className="text-truncate me-0">{`${langInfo[20]}: ${item.quantity}`}</span>
+            {Array.isArray(pageData.data) ? (
+              <>
+                {pageData.data.map((item, index) => (
+                  <div key={index} className="job-item p-4 mt-0 mb-0">
+                    <div className="row g-4">
+                      <div className="col-sm-12 col-md-8 d-flex align-items-center">
+                        <img
+                          className="flex-shrink-0 img-fluid border rounded"
+                          src="/static/img/img/com-logo-1.jpg"
+                          alt=""
+                          style={{ width: 80, height: 80 }}
+                        />
+                        <div className="text-start ps-4">
+                          <h5 className="mb-3">{`${langInfo[17]}: ${item.model}`}</h5>
+                          <span className="text-truncate me-3">{`${langInfo[18]}: ${item.brand}`}</span>
+                          <span className="text-truncate me-3">{`${langInfo[19]}: ${item.fengzhuang}`}</span>
+                          <span className="text-truncate me-0">{`${langInfo[20]}: ${item.quantity}`}</span>
+                        </div>
+                      </div>
+                      <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                        <div className="d-flex mb-3">
+                          <a
+                            className="btn btn-primary"
+                            href={`http://www.alldatasheet.net/view.jsp?Searchword=${item.model}`}
+                            target="_blank"
+                          >
+                            {`${langInfo[21]}`}
+                          </a>
+                        </div>
+                        <small className="text-truncate">
+                          <i className="far fa-calendar-alt text-primary me-2"></i>
+                          {`${langInfo[22]}: ${item.year}`}
+                        </small>
+                      </div>
                     </div>
                   </div>
-                  <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                    <div className="d-flex mb-3">
-                      <a
-                        className="btn btn-primary"
-                        href={`http://www.alldatasheet.net/view.jsp?Searchword=${item.model}`}
-                        target="_blank"
+                ))}
+                <div className="col-5">
+                  <nav aria-label="Page navigation">
+                    <ul className="pagination pagination-sm justify-content-start m-0">
+                      <li
+                        className={`page-item ${
+                          pageInfo.currentPage === 1 && "disabled"
+                        }`}
                       >
-                        {`${langInfo[21]}`}
-                      </a>
-                    </div>
-                    <small className="text-truncate">
-                      <i className="far fa-calendar-alt text-primary me-2"></i>
-                      {`${langInfo[22]}: ${item.year}`}
-                    </small>
-                  </div>
+                        <a
+                          className="page-link"
+                          onClick={() =>
+                            selectPageData({
+                              pageSize: 10,
+                              currentPage: 1,
+                              model: pageInfo.model,
+                            })
+                          }
+                        >
+                          {lang === "cn" ? "首页" : "First page"}
+                        </a>
+                      </li>
+                      <li
+                        className={`page-item ${
+                          pageInfo.currentPage - 1 <= 0 && "disabled"
+                        }`}
+                      >
+                        <a
+                          className="page-link"
+                          aria-label="Previous"
+                          onClick={() => {
+                            if (pageInfo.currentPage - 1 >= 1) {
+                              selectPageData({
+                                pageSize: 10,
+                                currentPage: pageInfo.currentPage - 1,
+                                model: pageInfo.model,
+                              });
+                            }
+                          }}
+                        >
+                          <span aria-hidden="true">
+                            <i className="bi bi-arrow-left"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li
+                        className={`page-item ${
+                          pageInfo.currentPage + 1 > pageData.totalPage &&
+                          "disabled"
+                        }`}
+                      >
+                        <a
+                          className="page-link"
+                          aria-label="Next"
+                          onClick={() => {
+                            if (
+                              pageInfo.currentPage + 1 <=
+                              pageData.totalPage
+                            ) {
+                              selectPageData({
+                                pageSize: 10,
+                                currentPage: pageInfo.currentPage + 1,
+                                model: pageInfo.model,
+                              });
+                            }
+                          }}
+                        >
+                          <span aria-hidden="true">
+                            <i className="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
+                      </li>
+                      <li
+                        className={`page-item ${
+                          pageInfo.currentPage === pageData.totalPage &&
+                          "disabled"
+                        }`}
+                      >
+                        <a
+                          className="page-link"
+                          onClick={() =>
+                            selectPageData({
+                              pageSize: 10,
+                              currentPage: pageData.totalPage,
+                              model: pageInfo.model,
+                            })
+                          }
+                        >
+                          {lang === "cn" ? "尾页" : "Last page"}
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
-              </div>
-            ))}
-            <div className="col-12">
-              <nav aria-label="Page navigation">
-                <ul className="pagination pagination-lg justify-content-start m-0">
-                  <li className="page-item">
-                    <a className="page-link" href="#">
-                      首页
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">
-                        <i className="bi bi-arrow-left"></i>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">
-                        <i className="bi bi-arrow-right"></i>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="page-item">
-                    <a className="page-link" href="#">
-                      尾页
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+                <div className="col-7 d-flex align-items-center justify-content-end">
+                  {lang === "cn" ? (
+                    <div
+                      className="text-black fw-bold text-uppercase"
+                      style={{ textAlign: "center", fontSize: 16 }}
+                    >
+                      {`共有库存信息${pageData.totalCount}条 每页10条 第${pageInfo.currentPage}页/共${pageData.totalPage}页`}
+                    </div>
+                  ) : (
+                    <div
+                      className="text-black fw-bold text-uppercase"
+                      style={{ textAlign: "center", fontSize: 16 }}
+                    >
+                      {`Total information ${pageData.totalCount} perlist 10  Page ${pageInfo.currentPage} /Total page ${pageData.totalPage}`}
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div
+                  className="display-6 text-black text-uppercase mb-md-4"
+                  style={{ textAlign: "center" }}
+                >
+                  {`${pageInfo.model}型号：没有库存数据`}
+                </div>
+                <div className="d-flex mb-3 justify-content-center">
+                  <a
+                    className="btn btn-primary"
+                    onClick={() => {
+                      setPageInfo(() => {
+                        let pageInfo = {
+                          pageSize: 10,
+                          currentPage: 1,
+                          model: "",
+                        };
+                        setSearchValue("");
+                        searchPageData(pageInfo);
+                        return pageInfo;
+                      });
+                    }}
+                  >
+                    查看全部库存
+                  </a>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
