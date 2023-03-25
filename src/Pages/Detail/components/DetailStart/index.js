@@ -85,8 +85,13 @@ const DetailStart = (props) => {
           : "Please enter the question information completely!"
       );
     } else {
-      axios.post("/back-server/api/subscribe", questionInfo).then((data) => {
+      axios.post("/back-server/api/question", questionInfo).then((data) => {
         console.log("data", data);
+        alert(
+          lang === "cn"
+            ? "您的问题已经提交，稍后有人会与你联系!"
+            : "Your question has been submitted and someone will contact you later!"
+        );
       });
     }
   };

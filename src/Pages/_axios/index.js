@@ -25,8 +25,8 @@ async function apiAxios(method, url, params) {
       .catch(async (e) => {
         if (e.response.status === 401) {
           const data = await apiAxios("POST", "/back-server/login", {
-            username: "Ccjiafan",
-            password: "Ccjiafan0801!",
+            username: "apiuser",
+            password: "ApiUser168.",
           });
           token = data.token;
           const apiData = await apiAxios(method, url, params);

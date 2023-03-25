@@ -83,6 +83,11 @@ const ClassApp = (props) => {
     } else {
       axios.post("/back-server/api/enquiry", consultationInfo).then((data) => {
         console.log("data", data);
+        alert(
+          lang === "cn"
+            ? "您的询价已经提交，稍后有人会与你联系!"
+            : "Your RFQ has been submitted and someone will contact you later!"
+        );
       });
     }
   };
@@ -90,16 +95,16 @@ const ClassApp = (props) => {
   return (
     <div className="container-fluid p-5">
       <div className="row gx-5">
-        <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: 500 }}>
+        <div className="col-lg-6 mb-5 mb-lg-0" style={{ minHeight: 500 }}>
           <div className="position-relative h-100">
             <img
               className="position-absolute w-100 h-100 rounded"
-              src="/static/img/main/RFQ.jpg"
+              src="/static/img/carousel-1.jpg"
               style={{ objectFit: "cover" }}
             />
           </div>
         </div>
-        <div className="col-lg-7">
+        <div className="col-lg-6">
           <div className="rounded bg-dark p-4">
             <h2
               className="display-4 text-uppercase mb-0"

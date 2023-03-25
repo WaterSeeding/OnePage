@@ -89,7 +89,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
-                        onClick={() => gotoPage("Classes")}
+                        onClick={() => gotoPage("RFQ")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[4]}
@@ -97,7 +97,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
-                        onClick={() => gotoPage("Detail")}
+                        onClick={() => gotoPage("FAQ")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[5]}
@@ -109,7 +109,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
-                        onClick={() => gotoPage("Team")}
+                        onClick={() => gotoPage("PICTURES")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[6]}
@@ -117,7 +117,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
-                        onClick={() => gotoPage("Blog")}
+                        onClick={() => gotoPage("PRODUCTS")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[7]}
@@ -125,7 +125,7 @@ const Footer = (props) => {
                       <a
                         className="text-secondary mb-2"
                         style={{ cursor: "pointer" }}
-                        onClick={() => gotoPage("About")}
+                        onClick={() => gotoPage("ABOUT")}
                       >
                         <i className="bi bi-arrow-right text-primary me-2"></i>
                         {langInfo[8]}

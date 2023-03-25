@@ -128,44 +128,44 @@ const Header = (props) => {
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
-                    activeItem === "Classes" && "active"
+                    activeItem === "RFQ" && "active"
                   }`}
                   style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("Classes")}
+                  onClick={() => gotoPage("RFQ")}
                 >
                   {langInfo[2]}
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
-                    activeItem === "Team" && "active"
+                    activeItem === "PICTURES" && "active"
                   }`}
                   style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("Team")}
+                  onClick={() => gotoPage("PICTURES")}
                 >
                   {langInfo[3]}
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
-                    activeItem === "Blog" && "active"
+                    activeItem === "PRODUCTS" && "active"
                   }`}
                   style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("Blog")}
+                  onClick={() => gotoPage("PRODUCTS")}
                 >
                   {langInfo[4]}
                 </a>
                 <a
                   className="nav-item nav-link font-weight-bold"
                   style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("Detail")}
+                  onClick={() => gotoPage("FAQ")}
                 >
                   {langInfo[5]}
                 </a>
                 <a
                   className={`nav-item nav-link font-weight-bold ${
-                    activeItem === "About" && "active"
+                    activeItem === "ABOUT" && "active"
                   }`}
                   style={{ cursor: "pointer" }}
-                  onClick={() => gotoPage("About")}
+                  onClick={() => gotoPage("ABOUT")}
                 >
                   {langInfo[6]}
                 </a>
@@ -173,7 +173,7 @@ const Header = (props) => {
               <a
                 className="btn btn-primary font-weight-bold py-md-3 px-md-5 d-none d-lg-block"
                 style={{ cursor: "pointer" }}
-                onClick={() => gotoPage("Contact")}
+                onClick={() => gotoPage("CONTACT")}
               >
                 {langInfo[7]}
               </a>
