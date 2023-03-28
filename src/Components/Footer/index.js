@@ -64,11 +64,11 @@ const Footer = (props) => {
                 </div>
                 <div className="d-flex mb-3">
                   <i className="bi bi-envelope-open text-primary me-2"></i>
-                  <p className="mb-0">0755-82806855 /82806929</p>
+                  <p className="mb-0">0755-82806855 /82806939</p>
                 </div>
                 <div className="d-flex mb-3">
                   <i className="bi bi-telephone text-primary me-2"></i>
-                  <p className="mb-0">+86 13342986657</p>
+                  <p className="mb-0">+86 13510726338</p>
                 </div>
               </div>
               <div className="col-lg-6 col-md-12 pt-0 pt-lg-5 mb-5">

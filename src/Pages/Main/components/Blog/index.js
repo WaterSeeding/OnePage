@@ -4,12 +4,12 @@ import axios from "../../../_axios";
 const cnInfo = [
   "库存搜索",
   "联系方式",
-  "电话：0755-82806855 /82806929",
+  "电话：0755-82806855 /82806939",
   "传真：0755-82806919",
   "QQ：3117541604",
-  "手机：+86 13342986657",
+  "手机：+86 13510726338",
   "邮箱：vivi@jcwyic.com",
-  "whatsapp：+86 13342986657",
+  "whatsapp：+86 13510726338",
   "Skype：vivi@jcwyic.com",
   "联系人：陈先生",
   "快递查询",
@@ -30,12 +30,12 @@ const cnInfo = [
 const enInfo = [
   "Inventory search",
   "Contact information",
-  "telephone：0755-82806855 /82806929",
+  "telephone：0755-82806855 /82806939",
   "facsimile：0755-82806919",
   "QQ：3117541604",
-  "phone：+86 13342986657",
+  "phone：+86 13510726338",
   "email：vivi@jcwyic.com",
-  "whatsapp：+86 13342986657",
+  "whatsapp：+86 13510726338",
   "Skype：vivi@jcwyic.com",
   "Contact person: Mr. Chen",
   "Express inquiry",
@@ -144,52 +144,31 @@ const Blog = (props) => {
           <div className="mb-5">
             <h3 className="text-uppercase mb-4">{langInfo[1]}</h3>
             <div className="d-flex flex-column justify-content-start bg-dark rounded p-4">
-              <a
-                className="fs-5 fw-bold text-light text-uppercase mb-2"
-                href="#"
-              >
+              <a className="fs-5 fw-bold text-light text-uppercase mb-2">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
                 {langInfo[2]}
               </a>
-              <a
-                className="fs-5 fw-bold text-light text-uppercase mb-2"
-                href="#"
-              >
+              <a className="fs-5 fw-bold text-light text-uppercase mb-2">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
                 {langInfo[3]}
               </a>
-              <a
-                className="fs-5 fw-bold text-light text-uppercase mb-2"
-                href="#"
-              >
+              <a className="fs-5 fw-bold text-light text-uppercase mb-2">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
                 {langInfo[4]}
               </a>
-              <a
-                className="fs-5 fw-bold text-light text-uppercase mb-2"
-                href="#"
-              >
+              <a className="fs-5 fw-bold text-light text-uppercase mb-2">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
                 {langInfo[5]}
               </a>
-              <a
-                className="fs-5 fw-bold text-light text-uppercase mb-2"
-                href="#"
-              >
+              <a className="fs-5 fw-bold text-light text-uppercase mb-2">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
                 {langInfo[6]}
               </a>
-              <a
-                className="fs-5 fw-bold text-light text-uppercase mb-2"
-                href="#"
-              >
+              <a className="fs-5 fw-bold text-light text-uppercase mb-2">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
                 {langInfo[7]}
               </a>
-              <a
-                className="fs-5 fw-bold text-light text-uppercase mb-2"
-                href="#"
-              >
+              <a className="fs-5 fw-bold text-light text-uppercase mb-2">
                 <i className="bi bi-arrow-right text-primary me-2"></i>
                 {langInfo[8]}
               </a>
@@ -210,7 +189,8 @@ const Blog = (props) => {
                   alt=""
                 />
                 <a
-                  href=""
+                  href="https://www.fedex.com/zh-cn/home.html"
+                  target="_blank"
                   style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
@@ -225,7 +205,8 @@ const Blog = (props) => {
                   alt=""
                 />
                 <a
-                  href=""
+                  href="https://www.sf-express.com/chn/sc"
+                  target="_blank"
                   style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
@@ -240,7 +221,8 @@ const Blog = (props) => {
                   alt=""
                 />
                 <a
-                  href=""
+                  href="https://www.dhl.com/cn-zh/home.html"
+                  target="_blank"
                   style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
@@ -255,7 +237,8 @@ const Blog = (props) => {
                   alt=""
                 />
                 <a
-                  href=""
+                  href="https://www.tnt.com/express/zh_cn/site/home.html"
+                  target="_blank"
                   style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
@@ -270,7 +253,8 @@ const Blog = (props) => {
                   alt=""
                 />
                 <a
-                  href=""
+                  href="https://wwwapps.ups.com/ctc/request?loc=zh_CN&gclid=CJL1kYXs_v0CFQQZvAodMq0GmQ&gclsrc=ds"
+                  target="_blank"
                   style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
@@ -285,7 +269,8 @@ const Blog = (props) => {
                   alt=""
                 />
                 <a
-                  href=""
+                  href="https://www.ems.com.cn/"
+                  target="_blank"
                   style={{ marginLeft: 50 }}
                   className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                 >
@@ -305,7 +290,11 @@ const Blog = (props) => {
                       <div className="col-sm-12 col-md-8 d-flex align-items-center">
                         <img
                           className="flex-shrink-0 img-fluid border rounded"
-                          src={item.photo ? `http://175.178.70.163:8030/back-server/sys/common/static/${item.photo}` :"/static/img/img/com-logo-1.jpg"}
+                          src={
+                            item.photo
+                              ? `http://114.132.46.88:8030/back-server/sys/common/static/${item.photo}`
+                              : "/static/img/img/com-logo-1.jpg"
+                          }
                           alt=""
                           style={{ width: 80, height: 80 }}
                         />

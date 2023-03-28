@@ -50,7 +50,7 @@ const ContactStart = (props) => {
             <h5 className="text-uppercase text-primary mb-4">{langInfo[3]}</h5>
             <p className="text-secondary mb-2">{langInfo[4]}</p>
             <p className="text-secondary mb-0">
-              0755-82806855 /82806929 /+86 13342986657
+              0755-82806855 /82806939 /+86 13510726338
             </p>
           </div>
         </div>
@@ -62,9 +62,9 @@ const ContactStart = (props) => {
             >
               <i className="fa fa-map-marker-alt fs-4 text-white"></i>
             </div>
-            <h5 className="text-uppercase text-primary mb-4">QQ/Wechat</h5>
+            <h5 className="text-uppercase text-primary mb-4">QQ/Hathcole</h5>
             <p className="text-secondary mb-2">QQ: 3117541604</p>
-            <p className="text-secondary mb-0">Wechat: 13342986657</p>
+            <p className="text-secondary mb-0">Hathcole: 13510726338</p>
           </div>
         </div>
         <div className="col-lg-6">
@@ -76,7 +76,7 @@ const ContactStart = (props) => {
               <i className="fa fa-phone fs-4 text-white"></i>
             </div>
             <h5 className="text-uppercase text-primary mb-4">Whatsapp/Skype</h5>
-            <p className="text-secondary mb-2">Whatsapp: +86 13342986657</p>
+            <p className="text-secondary mb-2">Whatsapp: +86 13510726338</p>
             <p className="text-secondary mb-0">Skype: vivi@jcwyic.com</p>
           </div>
         </div>

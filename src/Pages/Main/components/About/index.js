@@ -99,7 +99,7 @@ const ClassApp = (props) => {
           <div className="position-relative h-100">
             <img
               className="position-absolute w-100 h-100 rounded"
-              src="/static/img/carousel-1.jpg"
+              src="/static/img/carousel-4.jpg"
               style={{ objectFit: "cover" }}
             />
           </div>
