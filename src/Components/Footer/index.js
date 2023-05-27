@@ -15,7 +15,7 @@ const cnInfo = [
   "最新资讯，可以推送给您！",
   "你的邮箱...",
   "提交",
-  "粤ICP备13019005号",
+  "粤ICP备13019005号-1",
 ];
 
 const enInfo = [
@@ -32,7 +32,7 @@ const enInfo = [
   "The latest information can be pushed to you！",
   "Your email...",
   "Submit",
-  "粤ICP备13019005号",
+  "粤ICP备13019005号-1",
 ];
 
 const Footer = (props) => {
@@ -161,7 +161,12 @@ const Footer = (props) => {
             <div className="py-lg-4 text-center">
               <p className="text-secondary mb-0">
                 &copy;{" "}
-                <a className="text-light fw-bold" style={{ cursor: "pointer" }}>
+                <a
+                  className="text-light fw-bold"
+                  style={{ cursor: "pointer" }}
+                  href="https://beian.miit.gov.cn/"
+                  target="_black"
+                >
                   {langInfo[13]}
                 </a>
               </p>
