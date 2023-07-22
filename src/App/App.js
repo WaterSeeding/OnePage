@@ -25,7 +25,7 @@ const App = (props) => {
 };
 
 const AppContainer = () => {
-  const [lang, setLang] = useState("cn");
+  const [lang, setLang] = useState("en");
   return (
     <BrowserRouter>
       <Routes>

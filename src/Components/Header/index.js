@@ -51,17 +51,17 @@ const Header = (props) => {
           <a className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
             <img
               className="img-thumbnail"
-              style={{ width: 160, height: "auto" }}
+              style={{ width: 160, height: "auto", border: 0, backgroundColor: 'transparent' }}
               src="/static/img/main/logo.jpg"
               alt=""
             ></img>
           </a>
         </div>
         <div className="col-lg-9">
-          <div className="row gx-0 bg-secondary d-none d-lg-flex">
+          <div className="row gx-0 bg-white d-none d-lg-flex">
             <div className="col-lg-7 px-5 text-start">
               <div className="h-100 d-inline-flex align-items-center py-2 me-4">
-                <h6 className="mb-0 font-weight-bold">{langInfo[0]}</h6>
+                <h4 className="mb-0 font-weight-bold">{langInfo[0]}</h4>
               </div>
             </div>
             <div className="col-lg-5 px-5 text-end">

@@ -325,7 +325,7 @@ const Blog = (props) => {
                 ))}
                 <div className="col-5">
                   <nav aria-label="Page navigation">
-                    <ul className="pagination pagination-sm justify-content-start m-0">
+                    <ul hidden={true} className="pagination pagination-sm justify-content-start m-0">
                       <li
                         className={`page-item ${
                           pageInfo.currentPage === 1 && "disabled"

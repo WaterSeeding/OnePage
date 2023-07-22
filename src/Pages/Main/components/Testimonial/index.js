@@ -33,10 +33,10 @@ const About = (props) => {
       items: 1,
       dots: false,
       loop: true,
-      nav: true,
+      nav: false,
       navText: [
-        '<i className="bi bi-arrow-left"></i>',
-        '<i className="bi bi-arrow-right"></i>',
+        // '<i className="bi bi-arrow-left"></i>',
+        // '<i className="bi bi-arrow-right"></i>',
       ],
     });
   }, []);
@@ -58,7 +58,7 @@ const About = (props) => {
               {langInfo[0]}
             </h1>
           </div>
-          <div className="owl-carousel testimonial-carousel">
+          <div className="owl-carousel testimonial-carousel mb-5">
             <div className="testimonial-item">
               <p
                 className="fs-4 fw-normal text-light mb-4"
